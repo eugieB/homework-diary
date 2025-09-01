@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <h1 class="title">Diary</h1>
+  <form action="/add" method="post">
+    <div class="field">
+      <label class="label">Task</label>
+      <div class="control"><input class="input" name="task" required></div>
+    </div>
+    <div class="field">
+      <label class="label">Learner</label>
+      <div class="control"><input class="input" name="learner" required></div>
+    </div>
+    <div class="field">
+      <label class="label">Special Focus</label>
+      <div class="control"><input class="input" name="focus" required></div>
+    </div>
+    <button class="button is-link">Add</button>
+  </form>
+
+  <hr>
+  <h2 class="subtitle">Recent Homework</h2>
+  <table class="table is-striped">
+    <thead><tr><th>Date</th><th>Learner</th><th>Task</th><th>Focus</th></tr></thead>
+    <tbody>
+      {% for h in hw %}
+      <tr>
+        <td>{{ h.date.strftime('%d-%b') }}</td>
+        <td>{{ h.learner.name }}</td>
+        <td>{{ h.task }}</td>
+        <td>{{ h.special_focus }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}
