@@ -1,0 +1,13 @@
+homework-diary-sa/
+├── app.py                 # FastAPI backend
+├── models.py              # SQLAlchemy models
+├── seed.py                # demo data
+├── templates/
+│   ├── base.html
+│   ├── dashboard.html
+│   └── analytics.html
+├── static/
+│   └── bulma.min.css
+├── requirements.txt
+├── Procfile               # Render deploy
+└── README.md
